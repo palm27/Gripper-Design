@@ -91,9 +91,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(70, 236);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 23);
+            this.label5.Size = new System.Drawing.Size(232, 23);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Vacuum pressure(PSI)";
+            this.label5.Text = "Vacuum pressure(kPa)";
             this.toolTip4.SetToolTip(this.label5, "From vacuum generator");
             // 
             // Surface_comboBox
@@ -123,6 +123,7 @@
             this.textBox2.Size = new System.Drawing.Size(151, 32);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "0";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // textBox3
             // 

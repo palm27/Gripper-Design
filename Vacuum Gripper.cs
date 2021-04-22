@@ -31,7 +31,8 @@ namespace Gripper_Design
           {
             get
               {
-                  return this.Mass_1;
+                System.Diagnostics.Debug.WriteLine("Mass_1: {0}", Mass_1);
+                return this.Mass_1;
               }
               set
               {
@@ -43,7 +44,8 @@ namespace Gripper_Design
           {
               get
               {
-                  return this.D1;
+                System.Diagnostics.Debug.WriteLine("Send_Number: {0}", D1);
+                return this.D1;
               }
               set
               {
@@ -62,13 +64,13 @@ namespace Gripper_Design
                 this.Press1 = value;
             }
         }
-        private void textBox2_TextChanged(object sender, EventArgs e)
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-            if(textBox1.Text != null)
+            if (textBox1.Text != null)
             {
                 D1 = int.Parse(textBox2.Text);
             }
-            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace Gripper_Design
             if (textBox1.Text != null)
             {
                 Mass_1 = int.Parse(textBox1.Text);
+                
             }
         }
 
