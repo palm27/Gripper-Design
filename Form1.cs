@@ -184,6 +184,11 @@ namespace Gripper_Design
             Application.Exit();
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             button12.Show();
