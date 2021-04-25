@@ -10,6 +10,7 @@ namespace Gripper_Design
 {
     public partial class CombineShape : UserControl
     {
+        int Mass_1 = 0;
         public CombineShape()
         {
             InitializeComponent();
@@ -24,5 +25,25 @@ namespace Gripper_Design
         {
 
         }
+        public int Mass_value
+        {
+            get
+            {
+                System.Diagnostics.Debug.WriteLine("Mass_1: {0}", Mass_1);
+                return this.Mass_1;
+            }
+            set
+            {
+                this.Mass_1 = value;
+            }
+        }
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != null)
+            {
+                Mass_1 = int.Parse(textBox1.Text);
+            }
+        }
+       
     }
 }

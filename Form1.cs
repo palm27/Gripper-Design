@@ -214,7 +214,7 @@ namespace Gripper_Design
         // Mould Finish
         private void button11_Click(object sender, EventArgs e)
         {
-            Cavity_mass = mold1.Mass_value;
+            Cavity_mass = combineShape1.Mass_value;
             System.Diagnostics.Debug.WriteLine("Mass: {0}", Cavity_mass);
             factor1.Mass_result.Text = Cavity_mass.ToString();
             Demolding_Force = ForceCavity_calculation(Cavity_mass);
