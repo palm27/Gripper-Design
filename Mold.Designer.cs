@@ -112,9 +112,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(71, 266);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 23);
+            this.label6.Size = new System.Drawing.Size(207, 23);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Mass per Cavity";
+            this.label6.Text = "Mass per Cavity(Kg)";
             // 
             // textBox1
             // 
@@ -143,6 +143,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(151, 32);
             this.textBox4.TabIndex = 4;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // Mold
             // 

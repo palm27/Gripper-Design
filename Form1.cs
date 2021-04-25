@@ -12,8 +12,8 @@ namespace Gripper_Design
 {
     public partial class Main : Form
     {
-        int Count = 0, Count2 = 0;
-        int surface_form_index = 0, Demolding_Force_input = 0;
+        int Count = 0, Count2 = 0, Cavity_mass =0;
+        int surface_form_index = 0, Demolding_Force = 0, Cup_number = 0, ForceperCup = 0;
         Double Cup_diameter = 0;
         static Form _obj;
         public static Form Instance
@@ -36,14 +36,19 @@ namespace Gripper_Design
         public int CupNumber_calculation(int x, int y)
         {
             int xNumber = 0, yNumber = 0, CupNo = 0;
-            xNumber = x / 100;
-            yNumber = y / 100;
+            xNumber = x / 200;
+            yNumber = y / 200;
             CupNo = xNumber * yNumber;
             return CupNo;
         }
-        public int Force_calculation(int Object_mass,int n_cups)
+        public int ForceCavity_calculation(int Object_mass)
         {   
             int Force = Object_mass*10 * 4;
+            return Force;
+        }
+        public int ForceCup_calculation(int F, int n_cups)
+        {
+            int Force = F;
             Force = Force / n_cups;
             System.Diagnostics.Debug.WriteLine("Force: {0}", Force);
             return Force;
@@ -78,6 +83,7 @@ namespace Gripper_Design
             button11.Hide();
             button12.Hide();
             button13.Hide();
+            button14.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,6 +91,7 @@ namespace Gripper_Design
             button10.Hide();
             button11.Hide();
             button13.Hide();
+            button14.Hide();
             outerShape1.BringToFront();
             button7.Show();
         }
@@ -160,6 +167,7 @@ namespace Gripper_Design
             button11.Hide();
             button10.Show();
             button13.Hide();
+            button14.Hide();
         }
         // Mold
         private void button5_Click(object sender, EventArgs e)
@@ -172,6 +180,7 @@ namespace Gripper_Design
             button9.Hide();
             button10.Hide();
             button13.Hide();
+            button14.Hide();
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -194,13 +203,50 @@ namespace Gripper_Design
             button9.Hide();
             button10.Hide();
             button13.Hide();
+            button14.Hide();
         }
 
+        // Print BOM
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Mould Finish
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Cavity_mass = mold1.Mass_value;
+            System.Diagnostics.Debug.WriteLine("Mass: {0}", Cavity_mass);
+            factor1.Mass_result.Text = Cavity_mass.ToString();
+            Demolding_Force = ForceCavity_calculation(Cavity_mass);
+            System.Diagnostics.Debug.WriteLine("Demolding Force: {0}", Demolding_Force);
+            factor1.DemoldingForce.Text = Demolding_Force.ToString();
+            Cup_number = CupNumber_calculation(900,550);
+            System.Diagnostics.Debug.WriteLine("Cup Number: {0}", Cup_number);
+            draftVacuumGripper1.NumberOfVacuum.Text = Cup_number.ToString();
+            ForceperCup = ForceCup_calculation(Demolding_Force,Cup_number);
+            double Force_to_lb = Convert.ToDouble(ForceperCup);
+            Force_to_lb = Force_to_lb * 0.224;
+            // Fixed Pressure
+            double PSI = 88;
+            PSI = PSI * 0.145;
+            Cup_diameter = SuctionDiameter_calculation(Force_to_lb,PSI);
+            System.Diagnostics.Debug.WriteLine("Suction Diameter: {0}", Cup_diameter);
+            draftVacuumGripper1.PadDiameter.Text = Cup_diameter.ToString();
+        }
+
+        //Gripper
         private void button3_Click(object sender, EventArgs e)
         {
-            button12.Show();
-            button11.Hide();
-            gripperSelection1.BringToFront();
+            draftVacuumGripper1.BringToFront();
+            button14.Show();
+            // button12.Show();
+            button11.Hide(); 
+            button12.Hide();
+            button7.Hide();
+            button8.Hide();
+            button9.Hide();
+            button10.Hide();
+            // gripperSelection1.BringToFront();
         }
         // gripper next
         private void button12_Click(object sender, EventArgs e)
@@ -209,7 +255,7 @@ namespace Gripper_Design
             System.Diagnostics.Debug.WriteLine(this.gripperSelection1.Gripper_index);
             // Vacuum gripper
 
-
+            //draftVacuumGripper1.BringToFront();
             /*
             if(this.gripperSelection1.Gripper_index==0)
             {
@@ -264,8 +310,8 @@ namespace Gripper_Design
             else if (this.gripperSelection1.Gripper_index == 2)
             {
 
-            }
-        }*/
+            }*/
+        }
 
     }
 }

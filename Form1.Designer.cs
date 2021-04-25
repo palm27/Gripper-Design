@@ -52,13 +52,15 @@
             this.vacuum_Gripper1 = new Gripper_Design.Vacuum_Gripper();
             this.vacuumGripperResult1 = new Gripper_Design.VacuumGripperResult();
             this.vacuumGripperResult2 = new Gripper_Design.VacuumGripperResult();
+            this.factor1 = new Gripper_Design.Factor();
+            this.draftVacuumGripper1 = new Gripper_Design.DraftVacuumGripper();
             this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.factor1 = new Gripper_Design.Factor();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -250,6 +252,7 @@
             this.panel4.Controls.Add(this.vacuumGripperResult1);
             this.panel4.Controls.Add(this.vacuumGripperResult2);
             this.panel4.Controls.Add(this.factor1);
+            this.panel4.Controls.Add(this.draftVacuumGripper1);
             this.panel4.Location = new System.Drawing.Point(6, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(614, 527);
@@ -380,6 +383,22 @@
             this.vacuumGripperResult2.Size = new System.Drawing.Size(768, 661);
             this.vacuumGripperResult2.TabIndex = 5;
             // 
+            // factor1
+            // 
+            this.factor1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.factor1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.factor1.Location = new System.Drawing.Point(10, 0);
+            this.factor1.Name = "factor1";
+            this.factor1.Size = new System.Drawing.Size(768, 661);
+            this.factor1.TabIndex = 2;
+            // 
+            // draftVacuumGripper1
+            // 
+            this.draftVacuumGripper1.Location = new System.Drawing.Point(-6, -12);
+            this.draftVacuumGripper1.Name = "draftVacuumGripper1";
+            this.draftVacuumGripper1.Size = new System.Drawing.Size(768, 661);
+            this.draftVacuumGripper1.TabIndex = 2;
+            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -422,7 +441,7 @@
             this.button11.TabIndex = 2;
             this.button11.Text = "Mold Finish";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button7_Click);
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -446,20 +465,23 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // factor1
+            // button14
             // 
-            this.factor1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.factor1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.factor1.Location = new System.Drawing.Point(10, 0);
-            this.factor1.Name = "factor1";
-            this.factor1.Size = new System.Drawing.Size(768, 661);
-            this.factor1.TabIndex = 2;
+            this.button14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button14.Location = new System.Drawing.Point(518, 553);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(119, 60);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "BOM";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(882, 637);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -516,6 +538,8 @@
         private VacuumGripperResult vacuumGripperResult2;
         private System.Windows.Forms.Button button13;
         private Factor factor1;
+        private DraftVacuumGripper draftVacuumGripper1;
+        private System.Windows.Forms.Button button14;
     }
 }
 

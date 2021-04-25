@@ -14,5 +14,27 @@ namespace Gripper_Design
         {
             InitializeComponent();
         }
+        public Label Mass_result
+        {
+            get
+            {
+                return this.label4;
+            }
+            set
+            {
+                this.label4 = value;
+            }
+        }
+        public Label DemoldingForce
+        {
+            get
+            {
+                return this.label6;
+            }
+            set
+            {
+                this.label6 = value;
+            }
+        }
     }
 }
