@@ -112,9 +112,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(71, 266);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 23);
+            this.label6.Size = new System.Drawing.Size(166, 23);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Mass(Cavity)";
+            this.label6.Text = "Mass per Cavity";
             // 
             // textBox1
             // 

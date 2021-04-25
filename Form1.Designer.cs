@@ -238,7 +238,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.factor1);
             this.panel4.Controls.Add(this.background1);
             this.panel4.Controls.Add(this.outerShape1);
             this.panel4.Controls.Add(this.innerShape1);
@@ -250,6 +249,7 @@
             this.panel4.Controls.Add(this.vacuum_Gripper1);
             this.panel4.Controls.Add(this.vacuumGripperResult1);
             this.panel4.Controls.Add(this.vacuumGripperResult2);
+            this.panel4.Controls.Add(this.factor1);
             this.panel4.Location = new System.Drawing.Point(6, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(614, 527);

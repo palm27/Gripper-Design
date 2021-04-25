@@ -186,7 +186,14 @@ namespace Gripper_Design
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            factor1.BringToFront();
+            button11.Hide();
+            button12.Hide();
+            button7.Hide();
+            button8.Hide();
+            button9.Hide();
+            button10.Hide();
+            button13.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -201,6 +208,9 @@ namespace Gripper_Design
             
             System.Diagnostics.Debug.WriteLine(this.gripperSelection1.Gripper_index);
             // Vacuum gripper
+
+
+            /*
             if(this.gripperSelection1.Gripper_index==0)
             {
                 vacuum_Gripper1.BringToFront();
@@ -255,7 +265,7 @@ namespace Gripper_Design
             {
 
             }
-        }
+        }*/
 
     }
 }
